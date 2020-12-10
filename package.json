@@ -1,12 +1,13 @@
 {
   "name": "native-notification-of-vue",
   "version": "1.0.2",
-  "description": "",
+  "description": "vue2.x开箱即用，封装HTML5原生的Notification API",
   "main": "index.js",
+  "repository": "https://github.com/zzzttt1017/native-notification-of-vue.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "somecat<zt@somecat.cn>",
+  "keywords": ["Vue", "Notification API"],
+  "author": "somecat <zt@somecat.cn>",
   "license": "ISC"
 }

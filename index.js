@@ -22,7 +22,8 @@ const defaultEvents = {
 const NativeNotificationOfVue = {
   install: function (Vue, options) {
     options = options || {}
-    options.requestOnLoad = options.requestOnLoad || true
+    // 是否页面加载后马上询问通知权限，否则使用时会再询问
+    options.requestOnLoad = !!options.requestOnLoad
 
     Vue.prototype.$nativeNotification = {}
 
@@ -31,7 +32,7 @@ const NativeNotificationOfVue = {
       return Notification.requestPermission()
     }
     Vue.prototype.$nativeNotification.requestPermission = requestPermission
-
+    options.requestOnLoad && requestPermission()
     // 主体函数
     const push = function (params, e = {}) {
       if (typeof params !== 'object') {
@@ -49,7 +50,7 @@ const NativeNotificationOfVue = {
       if (!e.onshow) e.onshow = function () { }
       return Promise.resolve()
         .then(function () {
-          if (options.requestOnLoad && Notification.permission !== 'granted') {
+          if (Notification.permission !== 'granted') {
             return requestPermission()
           }
 
