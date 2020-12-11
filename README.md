@@ -1,7 +1,7 @@
 # native-notification-of-vue
 
 ### Description
-out of the box with Vue2.x, wraps the HTML5 native Notification API
+out of the box with Vue2.x and 🌟`Vue3.x`🌟, wraps the HTML5 native Notification API
 
 ### Introduction
   MDN say:
