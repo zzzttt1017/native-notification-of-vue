@@ -25,13 +25,16 @@ const NativeNotificationOfVue = {
     // 是否页面加载后马上询问通知权限，否则使用时会再询问
     options.requestOnLoad = !!options.requestOnLoad
 
-    Vue.prototype.$nativeNotification = {}
+    // 适配Vue3.x
+    let __prototype = Vue.prototype || Vue.config.globalProperties
+
+    __prototype.$nativeNotification = {}
 
     // 向用户请求通知权限
     let requestPermission = function () {
       return Notification.requestPermission()
     }
-    Vue.prototype.$nativeNotification.requestPermission = requestPermission
+    __prototype.$nativeNotification.requestPermission = requestPermission
     options.requestOnLoad && requestPermission()
     // 主体函数
     const push = function (params, e = {}) {
@@ -105,7 +108,7 @@ const NativeNotificationOfVue = {
           }
         })
     }
-    Vue.prototype.$nativeNotification.push = push
+    __prototype.$nativeNotification.push = push
   }
 }
 
