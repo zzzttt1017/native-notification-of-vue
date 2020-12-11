@@ -1,6 +1,6 @@
 {
   "name": "native-notification-of-vue",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "vue2.x开箱即用，封装HTML5原生的Notification API",
   "main": "index.js",
   "repository": "https://github.com/zzzttt1017/native-notification-of-vue.git",
